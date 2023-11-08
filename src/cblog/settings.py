@@ -83,8 +83,8 @@ def get_ssm_parameters():
     ssm = boto3.client('ssm', region_name='us-east-1')
 
     # AWS SSM Parametr define
-    username_param = ssm.get_parameter(Name='sbdk/capstone/username')
-    password_param = ssm.get_parameter(Name="sbdk/capstone/password", WithDecryption=True)
+    username_param = ssm.get_parameter(Name='/sbdk/capstone/username')
+    password_param = ssm.get_parameter(Name="/sbdk/capstone/password", WithDecryption=True)
 
 
     # Parametre retrieve
@@ -102,7 +102,7 @@ DATABASES = {
         'NAME': 'clarusway',
         'USER': db_username,
         'PASSWORD': db_password,
-        'HOST': 'caws-capstone-rds.czbjwvhlztdu.us-east-1.rds.amazonaws.com',
+        'HOST': 'aws-capstone-rds.czbjwvhlztdu.us-east-1.rds.amazonaws.com',
         'PORT': '3306',
     }
 }
